@@ -1,0 +1,24 @@
+{
+  "authors": [
+    {"name": "George", "surname": "Orwell"},
+    {"name": "J.K.", "surname": "Rowling"},
+    {"name": "Stephen", "surname": "King"},
+    {"name": "Jane", "surname": "Austen"}
+  ],
+  "categories": [
+    {"name": "Child"},
+    {"name": "Adults"},
+    {"name": "Horror"},
+    {"name": "Classic"}
+  ],
+  "books": [
+    {"name": "The Shining", "year": 1977, "available": 3},
+    {"name": "Harry Potter", "year": 1997, "available": 7},
+    {"name": "Disappearance", "year": 1998, "available": 2},
+    {"name": "Pride and Prejudice", "year": 1813, "available": 12},
+    {"name": "Another Book", "year": 2000, "available": 4}
+  ],
+  "users": [
+    {"name": "Admin", "surname": "Admin", "password": "password", "is_admin": true, "email": "Admin@gmail.com"}
+  ]
+}
