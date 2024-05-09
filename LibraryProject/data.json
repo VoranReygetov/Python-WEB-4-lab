@@ -51,8 +51,8 @@
         {
             "id": "5b99c7eb-2db2-4e3b-bef2-2545f3b8a06e",
             "nameBook": "1984",
-            "yearBook": 1949,
-            "availableBook": 6,
+            "yearBook": 1970,
+            "availableBook": 13,
             "category_id": "97fd149a-416f-4727-a49e-33d4d304d878",
             "author_id": "a65e6a7c-130b-4971-a2ba-76ed33e2c170"
         },
@@ -98,6 +98,15 @@
             "emailUser": "Manager1@ffdsfk.com",
             "number": "3424324",
             "id": "6443b73b-642c-4003-b0df-f2da116d4063"
+        },
+        {
+            "nameUser": "Stuff3",
+            "surnameUser": "Stuff3",
+            "passwordUser": "testpass1",
+            "is_admin": false,
+            "emailUser": "Stuff3@32131.com",
+            "numberUser": "23123",
+            "id": "9ea0ba40-5560-464f-91c2-c8165e1f9c94"
         }
     ],
     "histories": [
@@ -196,6 +205,70 @@
             "isReturned": true,
             "id": "745ecf39-2269-45eb-a575-a30b5dd4f6a7",
             "dateReturn": "2024-05-01 20:24:06.558946"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "5b99c7eb-2db2-4e3b-bef2-2545f3b8a06e",
+            "dateLoan": "2024-05-02 11:27:05.883573",
+            "isReturned": true,
+            "id": "4f0c83ab-ca4a-485c-a83f-0ffb2e541f8c",
+            "dateReturn": "2024-05-02 11:27:07.816363"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "7f445df3-fa2f-4c27-8e1e-c4354dad6d26",
+            "dateLoan": "2024-05-02 11:27:06.520555",
+            "isReturned": true,
+            "id": "2a59024f-a6af-47fb-99c4-042d2055b554",
+            "dateReturn": "2024-05-02 11:27:07.262845"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "5b99c7eb-2db2-4e3b-bef2-2545f3b8a06e",
+            "dateLoan": "2024-05-02 12:51:23.764699",
+            "isReturned": true,
+            "id": "e4dffad8-c52a-4453-81b8-d196936a7b35",
+            "dateReturn": "2024-05-02 12:51:38.503506"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "7f445df3-fa2f-4c27-8e1e-c4354dad6d26",
+            "dateLoan": "2024-05-02 12:51:25.001338",
+            "isReturned": true,
+            "id": "e4959458-01ed-4a29-afba-cd6f23fd5290",
+            "dateReturn": "2024-05-02 12:51:38.821766"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "a3c60b2c-20b7-4f30-8afc-366d7b6e1f63",
+            "dateLoan": "2024-05-02 12:51:25.574603",
+            "isReturned": true,
+            "id": "94b5e5dd-b449-46ee-a267-ddf6c679a4fa",
+            "dateReturn": "2024-05-02 12:51:39.164922"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "5b99c7eb-2db2-4e3b-bef2-2545f3b8a06e",
+            "dateLoan": "2024-05-02 13:42:31.219117",
+            "isReturned": true,
+            "id": "6bfde9fd-d0fd-403f-a0eb-29fc71897a16",
+            "dateReturn": "2024-05-02 13:42:35.279876"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "7f445df3-fa2f-4c27-8e1e-c4354dad6d26",
+            "dateLoan": "2024-05-02 13:42:32.112706",
+            "isReturned": true,
+            "id": "e6aca921-9c14-47bd-a449-c8f5e9344060",
+            "dateReturn": "2024-05-02 13:42:35.857531"
+        },
+        {
+            "user_id": "6443b73b-642c-4003-b0df-f2da116d4063",
+            "book_id": "a3c60b2c-20b7-4f30-8afc-366d7b6e1f63",
+            "dateLoan": "2024-05-02 13:42:32.674541",
+            "isReturned": true,
+            "id": "b8df002d-d2e5-41af-b922-c3429b8a3d5c",
+            "dateReturn": "2024-05-02 13:42:33.870293"
         }
     ]
 }
