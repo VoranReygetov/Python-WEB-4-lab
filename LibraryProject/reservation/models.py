@@ -1,39 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import User
 from django.utils import timezone
-
-# Custom user manager for creating users with email as unique identifier
-class UserManager(BaseUserManager):
-    def create_user(self, emailUser, passwordUser=None, **extra_fields):
-        if not emailUser:
-            raise ValueError("The Email field must be set")
-        emailUser = self.normalize_email(emailUser)
-        user = self.model(emailUser=emailUser, **extra_fields)
-        if passwordUser:
-            user.set_password(passwordUser)
-        user.save(using=self._db)
-        return user
-
-    def create_superuser(self, emailUser, passwordUser=None, **extra_fields):
-        extra_fields.setdefault("is_admin", True)
-        return self.create_user(emailUser, passwordUser, **extra_fields)
-
-
-# Custom user model
-class User(AbstractBaseUser):
-    emailUser = models.EmailField(unique=True)
-    nameUser = models.CharField(max_length=255)
-    surnameUser = models.CharField(max_length=255, blank=True, null=True)
-    numberUser = models.PositiveIntegerField(blank=True, null=True)
-    is_admin = models.BooleanField(default=False)
-    
-    objects = UserManager()
-
-    USERNAME_FIELD = 'emailUser'
-    REQUIRED_FIELDS = ['nameUser']
-
-    def check_password(self, password):
-        return self.check_password(password)  # Django provides this method
 
 
 class Author(models.Model):
