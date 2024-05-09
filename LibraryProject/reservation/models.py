@@ -38,4 +38,4 @@ class History(models.Model):
     isReturned = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"Loan by {self.user.emailUser} for {self.books.nameBook}"
+        return f"Loan by {self.user.get_full_name()} for {self.books.nameBook}"
