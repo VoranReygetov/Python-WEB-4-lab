@@ -40,6 +40,22 @@
         {% endfor %}
     </tbody>
 </table>
+<div>
+    {% if books.paginator.num_pages > 1 %}
+        <div class="pagination">
+            {% if books.has_previous %}
+                <a href="?page={{ books.previous_page_number }}&perpage={{ books.paginator.per_page }}"> Previous</a>
+            {% endif %}
+
+            <span>Page {{ books.number }} of {{ books.paginator.num_pages }}</span>
+
+            {% if books.has_next %}
+                <a href="?page={{ books.next_page_number }}&perpage={{ books.paginator.per_page }}">Next </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+
 <a type="button" href="rents-list" class="mb-4 btn btn-outline-secondary">View Rents</a>
 <script>
     form_container = document.getElementById("formContainer");

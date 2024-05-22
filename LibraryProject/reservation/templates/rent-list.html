@@ -38,7 +38,19 @@
                 {% endfor %}
             </tbody>
         </table>
+        {%if rents.paginator.num_pages > 1%}
+        <div>
+            {% if rents.has_previous %}
+                <a href="?page={{ rents.previous_page_number }}&perpage={{ rents.paginator.per_page }}">Previous</a>
+            {% endif %}
         
+            <span>Page {{ rents.number }} of {{ rents.paginator.num_pages }}</span>
+        
+            {% if rents.has_next %}
+                <a href="?page={{ rents.next_page_number }}&perpage={{ rents.paginator.per_page }}">Next</a>
+            {% endif %}
+        </div>
+        {%endif%}
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
