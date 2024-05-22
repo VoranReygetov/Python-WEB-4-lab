@@ -1,8 +1,19 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, ButtonHolder, Submit
+
+class LoginForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'id': 'username',
+        'required': 'required'
+    }))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={
+        'class': 'form-control',
+        'id': 'password',
+        'required': 'required'
+    }))
+
 
 class RegisterUserForm(UserCreationForm):
     email = forms.EmailField(

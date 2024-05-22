@@ -71,6 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'LibraryProject.wsgi.application'
 
+LOGIN_URL = 'auth_user/login'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
