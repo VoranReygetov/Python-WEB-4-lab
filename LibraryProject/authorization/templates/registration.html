@@ -19,7 +19,7 @@
                     </div>
                     {% endfor %}
                 {%endif%}
-                {%if form.errors%}
+                {% if form.errors %}
                 <p>There's problem with your form</p>
                 {%endif%}
                 <form action="{%url 'registration'%}" id = 'form' method="POST">
@@ -27,6 +27,7 @@
                         {{ form.as_p }}
                     <input type="submit", value="Submit" class="btn btn-primary submit-btn"> 
                 </form>
+                <a href="{% url 'login' %}" class="btn btn-secondary">Log In</a>
             </div>
         </div>
     </main>

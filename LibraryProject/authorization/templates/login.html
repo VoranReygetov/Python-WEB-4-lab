@@ -10,28 +10,28 @@
     <main>
         <div class="d-flex align-items-center justify-content-center">
             <div class="p-2 m-2 bg-light text-black shadow rounded-2">
-                <form action="" method="POST" id="form"> 
-                    {% csrf_token %} 
+                <form method="post" id="form">
+                    {% csrf_token %}
                     {% if messages %}
-                        {%for message in messages%}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            {{message}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
+                        {% for message in messages %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
                         {% endfor %}
-                    {%endif%}
+                    {% endif %}
                     <h1>Log In</h1>
                     <div class="form-group mb-3">
-                        <label for="text" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
                     </div>
                     <div class="form-group mb-3">
-                        <label for="password" class="form-label">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
                     </div>
-                    <input type="submit", value="Submit" class="btn btn-primary submit-btn"> 
-                    <a href="{%registration%}" class="btn btn-secondary">Registration</a>
-                </form> 
+                    <input type="submit" value="Submit" class="btn btn-primary submit-btn">
+                    <a href="{% url 'registration' %}" class="btn btn-secondary">Registration</a>
+                </form>
             </div>
         </div>
     </main>

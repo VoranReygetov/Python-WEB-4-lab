@@ -28,8 +28,8 @@
                 {% for rent in rents %}
                     <tr>
                         <td>{{ rent.id }}</td>
-                        <td>{{ rent.user_id }}</td>
-                        <td>{{ rent.book_id }}</td>
+                        <td>{{ rent.user.id }}</td>
+                        <td>{{ rent.books.id }}</td>
                         <td>{{ rent.dateLoan}}</td>
                         <td>{{ rent.dateReturn }}</td>
                         <td>{{ rent.isReturned }}</td>                        
