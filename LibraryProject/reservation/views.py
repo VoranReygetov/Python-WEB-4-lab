@@ -17,6 +17,7 @@ from .models import *
 from .forms import BookForm
 from django.db.models import F
 from .serializers import BookSerializer
+from django.core.paginator import Paginator, EmptyPage
 
 # Create your views here.
 
@@ -32,6 +33,7 @@ def book_list(request):
     Returns the render of the book list page.
     """
     current_user = request.user
+
     if request.method == 'GET':
         if current_user.is_superuser:
             template_file = 'book-list-roles/admin-book-list.html'
@@ -39,19 +41,29 @@ def book_list(request):
             template_file = 'book-list-roles/user-book-list.html'
 
         books = Book.objects.all()
-        rents = History.objects.filter(user = current_user.id, isReturned = False)
-
+        rents = History.objects.filter(user=current_user.id, isReturned=False)
         rents_id = [rent.books.id for rent in rents]
         form = BookForm()
-        # A context dictionary with all the key-value pairs
+
+        # Pagination
+        perpage = request.GET.get('perpage', 10)
+        page = request.GET.get('page', 1)
+        paginator = Paginator(books, per_page=perpage)
+
+        try:
+            books = paginator.page(number=page)
+        except EmptyPage:
+            books = paginator.page(paginator.num_pages)
+
+        # Updated context dictionary
         context = {
             "books": books,
             "username": current_user.username,
             "rents_book_id": rents_id,
-            'form':form
+            'form': form,
+            'paginator': paginator,
         }
 
-        # Context dictionary in the render function
         return render(request, template_file, context)
     
     if request.method == 'POST':
@@ -132,10 +144,18 @@ def rent_list(request):
         return HttpResponseForbidden("Authorization failed")
 
     rents_list = History.objects.all().order_by('isReturned')
+    perpage = request.GET.get('perpage', 10)  # Default to 10 items per page if not specified
+    page = request.GET.get('page', 1)  # Default to page 1 if not specified
+    
+    paginator = Paginator(rents_list, per_page=perpage)
+    
+    try:
+        rents_list = paginator.page(number=page)
+    except EmptyPage:
+        rents_list = paginator.page(paginator.num_pages)
 
     context = {
         "rents": rents_list,
         "username": request.user,
     }
-
     return render(request, "rent-list.html", context)
